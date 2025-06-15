@@ -1,0 +1,26 @@
+{
+  "name": "expense-ratio-split-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/LukePa/Expense-ratio-split-server-and-backend#readme",
+  "bugs": {
+    "url": "https://github.com/LukePa/Expense-ratio-split-server-and-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukePa/Expense-ratio-split-server-and-backend.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-frontend": "cd ./node_modules/expense-ratio-split && npm install && npm run build",
+    "start": "npm run build-frontend && node index.js"
+  },
+  "dependencies": {
+    "expense-ratio-split": "github:LukePa/Expense-Ratio-Split",
+    "express": "^5.1.0"
+  }
+}
