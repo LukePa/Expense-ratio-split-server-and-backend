@@ -1,11 +1,20 @@
 import path from 'path';
 import express from "express";
+import cors from "cors";
 import getState from "./getState.js";
 import {setState, verifyState} from "./setState.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 const app = express()
 const port = 1111
+
+if (process.env.ENVIRONMENT === "dev") {
+    console.log("Running in Dev mode");
+}
+
+app.use(cors({origin: "http://localhost:5173"}))
 
 app.use(express.json())
 
