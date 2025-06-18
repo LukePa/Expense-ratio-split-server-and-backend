@@ -10,7 +10,7 @@ export default function getState() {
         const contents = fs.readFileSync(path.join(getDirname(), "state.json"));
         state = JSON.parse(contents);
     } catch (err) {
-        fs.writeFileSync(path.join(import.meta.dirname, "state.json"), "{}");
+        fs.writeFileSync(path.join(getDirname(), "state.json"), "{}");
     }
     
     return state;
