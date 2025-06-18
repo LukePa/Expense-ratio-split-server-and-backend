@@ -1,10 +1,11 @@
 import fs from "fs"
 import path from "path";
+import {getDirname} from "./helpers.js";
 
 
 export async function setState(state) {
     if (verifyState(state)) {
-        fs.writeFileSync(path.join(import.meta.dirname, "state.json"), JSON.stringify(state));
+        fs.writeFileSync(path.join(getDirname(), "state.json"), JSON.stringify(state));
         return true;
     }
     

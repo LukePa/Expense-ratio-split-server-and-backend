@@ -4,6 +4,7 @@ import cors from "cors";
 import getState from "./getState.js";
 import {setState, verifyState} from "./setState.js";
 import dotenv from "dotenv";
+import {getDirname} from "./helpers.js";
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ app.use(cors({origin: "http://localhost:5173"}))
 
 app.use(express.json())
 
-app.use(express.static(path.join(import.meta.dirname ?? __dirname, './node_modules/expense-ratio-split/dist')))
+app.use(express.static(path.join(getDirname(), './node_modules/expense-ratio-split/dist')))
 
 app.post('/state', async (req, res) => {
     try {
