@@ -18,7 +18,7 @@ app.use(cors({origin: "http://localhost:5173"}))
 
 app.use(express.json())
 
-app.use(express.static(path.join(import.meta.dirname, './node_modules/expense-ratio-split/dist')))
+app.use(express.static(path.join(import.meta.dirname ?? __dirname, './node_modules/expense-ratio-split/dist')))
 
 app.post('/state', async (req, res) => {
     try {

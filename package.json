@@ -17,7 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-frontend": "cd ./node_modules/expense-ratio-split && npm install && npm run build",
-    "start": "NODE_ENV=dev=prod node index.js",
+    "start": "NODE_ENV=prod node index.js",
     "dev": "NODE_ENV=dev nodemon index.js",
     "update-frontend": "npm update expense-ratio-split"
   },
