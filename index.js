@@ -42,7 +42,7 @@ app.get('/state', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(import.meta.dirname, "./node_modules/expense-ratio-split/dist/index.html"))
+    res.sendFile(path.join(getDirname(), "./node_modules/expense-ratio-split/dist/index.html"))
 })
 
 
