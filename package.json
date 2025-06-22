@@ -16,16 +16,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-frontend": "cd ./node_modules/expense-ratio-split && npm install && npm run build",
     "start": "NODE_ENV=prod node index.js",
     "dev": "NODE_ENV=dev nodemon index.js",
-    "update-frontend": "npm update expense-ratio-split"
+    "update-frontend": "npm update lukepa-expense-ratio-split"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "expense-ratio-split": "github:LukePa/Expense-Ratio-Split",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "lukepa-expense-ratio-split": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
