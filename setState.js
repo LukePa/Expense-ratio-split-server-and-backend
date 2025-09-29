@@ -1,11 +1,10 @@
 import fs from "fs"
-import path from "path";
-import {getDirname} from "./helpers.js";
+import getStatePath from "./getStatePath.js";
 
 
 export async function setState(state) {
     if (verifyState(state)) {
-        fs.writeFileSync(path.join(getDirname(), "state.json"), JSON.stringify(state));
+        fs.writeFileSync(getStatePath(), JSON.stringify(state));
         return true;
     }
     

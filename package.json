@@ -18,7 +18,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=prod node index.js",
     "dev": "NODE_ENV=dev nodemon index.js",
-    "update-frontend": "npm update lukepa-expense-ratio-split"
+    "update-frontend": "npm update lukepa-expense-ratio-split",
+    "build_docker": "sudo docker build -t expense-ratio-split .",
+    "run_docker": "sudo docker run -p 1111:1111 --mount type=bind,src=./dockerized_state.json,dst=/mnt/dockerized_state.json expense-ratio-split"
   },
   "dependencies": {
     "cors": "^2.8.5",

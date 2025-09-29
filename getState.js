@@ -1,16 +1,15 @@
 import fs from "fs";
-import path from "path";
-import {getDirname} from "./helpers.js";
+import getStatePath from "./getStatePath.js";
 
 
 export default function getState() {
     let state = {};
     
     try {
-        const contents = fs.readFileSync(path.join(getDirname(), "state.json"));
+        const contents = fs.readFileSync(getStatePath());
         state = JSON.parse(contents);
     } catch (err) {
-        fs.writeFileSync(path.join(getDirname(), "state.json"), "{}");
+        fs.writeFileSync(getStatePath(), "{}");
     }
     
     return state;

@@ -9,17 +9,17 @@ import {getDirname} from "./helpers.js";
 dotenv.config();
 
 const app = express()
-const port = 1111
+const port = process.env.PORT ?? 1111
 
 if (process.env.ENVIRONMENT === "dev") {
     console.log("Running in Dev mode");
+    app.use(cors({origin: "http://localhost:5173"}))
 }
 
-app.use(cors({origin: "http://localhost:5173"}))
 
 app.use(express.json())
 
-app.use(express.static(path.join(getDirname(), './node_modules/expense-ratio-split/dist')))
+app.use(express.static(path.join(getDirname(), './node_modules/lukepa-expense-ratio-split/dist')))
 
 app.post('/state', async (req, res) => {
     try {
@@ -42,7 +42,7 @@ app.get('/state', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(getDirname(), "./node_modules/expense-ratio-split/dist/index.html"))
+    res.sendFile(path.join(getDirname(), "./node_modules/lukepa-expense-ratio-split/dist/index.html"))
 })
 
 
